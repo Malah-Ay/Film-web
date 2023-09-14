@@ -1,0 +1,341 @@
+@import url("https://fonts.googleapis.com/css2?family=Electrolize&display=swap");
+/* base css start */
+
+* {
+  margin: 0;
+}
+/* base css end */
+body {
+  font-family: "Electrolize", sans-serif;
+}
+.container {
+  background-color: black;
+  color: white;
+}
+/* start navbar */
+.navbar {
+  background-color: #000;
+  height: 60px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.navbar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0% 50px;
+}
+.logo {
+  font-size: 30px;
+  color: rgb(255, 70, 70);
+}
+.menu-list {
+  display: flex;
+  list-style-type: none;
+  column-gap: 30px;
+  padding: 0;
+}
+.menu-list-item {
+  cursor: pointer;
+}
+.menu-list-item:hover {
+  font-weight: bold;
+}
+.menu-list-item.active {
+  font-weight: bold;
+}
+.profile-picture {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.profile-container {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+.profile-test-container {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.toggle {
+  width: 40px;
+  background-color: white;
+  position: relative;
+  height: 20px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.toggle-icon {
+  color: goldenrod;
+}
+.toggle-ball {
+  width: 18px;
+  height: 18px;
+  background-color: black;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  right: 1px;
+  transition: 0.5s ease all;
+}
+/* end navbar */
+/* sidebar start */
+.sidebar {
+  background-color: black;
+  align-items: center;
+  color: white;
+  height: 100%;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+  position: fixed;
+  margin-bottom:60px;
+  padding:top 4%;
+}
+.sidebar i {
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+/* sidebar end */
+
+/* featured start */
+.content-wrrapper {
+  margin-left: 50px;
+}
+/* just a tried t see how will gif looks like,with this style and high quality gif,not bad not bad */
+.featured-content {
+  background: url("https://gifdb.com/images/high/gandalf-looking-at-the-sky-48sibh293gbnm77n.gif");
+  padding: 50px;
+  height: calc(100vh - 160px);
+  background-size: 100% 100%;
+  color: silver;
+  font-family: 'Electrolize', sans-serif;
+  outline: none;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  object-fit:initial;
+}
+.featured-content p:hover {
+  color: black;
+  cursor: pointer;
+}
+.featured-tittle {
+  width: 400px;
+}
+.featured-desc {
+  width: 500px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  margin: 30px 0;
+}
+.featured-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.featured-buttons button {
+  padding: 10px 25px;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  column-gap: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Electrolize", sans-serif;
+}
+.featured-buttons .info-button {
+  background-color: rgb(145, 142, 142, 0.5);
+  color: white;
+}
+/* featured end */
+
+/* filter star */
+.move-list-filter {
+  margin: 20px 0 10px 50px;
+  padding: 20px;
+}
+.move-list-filter select {
+  background-color: black;
+  color: white;
+  padding: 7px 0;
+  width: 125px;
+}
+/* filter end */
+/* movie list start */
+.movie-list-container {
+  margin-left: 70px;
+}
+.movie-list {
+  list-style: none;
+  padding: 0;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+  transform: translateX(0);
+  transition: 1s all ease-in-out;
+}
+
+.movie-list-wrapper{
+overflow:hidden;
+position: relative;
+}
+.movie-item {
+  position: relative;
+}
+.movie-item:hover .movie-item-title,
+.movie-item:hover .movie-item-buttons{
+  opacity: 1;
+}
+.movie-item:hover .movie-item-img{
+  transform: scale(1.2);
+  margin: 0 30px;
+  opacity: .4;
+
+}
+
+.movie-item-img {
+  width: 270px;
+  height:200px;
+  object-fit: cover;
+  transition: 1s all ease-in-out;
+}
+.movie-item-title {
+  background-color: rgb(40, 40, 40, 0);
+  padding: 0 10px;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  left: 45px;
+  top: 10%;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+
+}
+.movie-item-buttons {
+  
+  background-color: rgb(40, 40, 40, 0);
+  padding:10px;
+  display: flex;
+  column-gap:20px;
+  font-weight: bold;
+  position: absolute;
+  left: 60px;
+  bottom: 10%;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+  
+}
+.movie-item-buttons i{
+  cursor: pointer;
+  opacity: 0.5;
+  font-size: 20px;
+  transition:.5s all ease;
+}
+.movie-item-buttons i:hover{
+opacity: 1;
+
+
+}
+.arrow{
+  width: 100px;
+  display: flex;
+  font-size: 120px;
+  position: absolute;
+  right: 0;
+  top:100px;  
+  opacity: 0.5;
+  transition: .5s ease all;
+}
+.arrow:hover{
+  opacity: 1;
+cursor: pointer;
+}
+
+/* movie list end */
+/* dark mode start */
+.container.active{
+  background-color: white;
+  color: black;
+}
+.navbar.active{
+background-color: white;
+color: black;
+}
+.movie-item-title.active{
+  color: black;
+}
+.sidebar.active{
+background-color: white;
+color: black;
+}
+
+.sidebar i.active{
+  color: black;
+  }
+  .toggle.active{
+    background-color: black;
+  }
+  .toggle-ball.active{
+    background-color: white;
+    transform: translateX(-20px);
+  }
+  .movie-list-filter-select.active{
+    background-color: white;
+    color: black;
+  }
+/* dark mode end */
+/* responsive start */
+@media only screen and (max-width:800){
+  .menu.container{
+    display: none;
+  }
+  .featured-content{
+    height: 50vh;
+  }
+  .featured-tittle{
+    width: 200px;
+  }
+  .featured-desc{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    max-width: 200px;
+    padding: 0;
+  }
+
+
+
+
+}
+
+/* responsive end */
+
+
+
+
+
+
+
+
+
+
+
+
+
